@@ -18,7 +18,7 @@ class Octal
   end
 
   def to_decimal
-    return 0 if @octal_string.match?(/[a-z]/i) || @digits.any? { |n| n > 7 }
+    return 0 if @octal_string.match?(/[^0-7]/)
     @digits.reverse.map.with_index do |num, idx|
       num * (8**idx)
     end.inject(:+)
