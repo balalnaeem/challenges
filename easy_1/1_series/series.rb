@@ -19,7 +19,7 @@ And the following 4-digit series:
   - if we have have a str_num '54321'
   - and we want all the possible series of length 4
   - we will get 5432, 4321
-  - on each iteration we are getting a series of the length of 2
+  - on each iteration we are getting a series of the length of 4
   - and on each iteration starting index is moving one step further until it's no more possible to make a series
 
   ==> until it's no more possible to make a series

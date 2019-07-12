@@ -1,8 +1,6 @@
 =begin
   convert numbers to roman numerals.
 
-  Trickier than it sounds. I will have a go now after the gym.
-
   Al:
   - I will first create a hash for all the roman values
 =end
