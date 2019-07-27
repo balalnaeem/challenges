@@ -25,3 +25,32 @@
   - and as you go along keep inderting commands into the array
   - if you reach where you have 10000, reverse the array before returning
 =end
+
+class SecretHandshake
+  SECRET_CODES = {
+    1     => 'wink',
+    10    => 'double blink',
+    100   => 'close your eyes',
+    1000  => 'jump',
+    10000 => nil
+  }
+
+  def initialize(input)
+    @binary_str = input.is_a?(Integer) ? input.to_s(2) : input
+    @reverse_commands = @binary_str.size > 4 ? true : false
+  end
+
+  def commands
+    result = []
+    remainder = @binary_str.to_i
+    loop do
+      SECRET_CODES.keys.reverse.each do |code|
+        quotient, remainder = remainder.divmod(code)
+        result.unshift SECRET_CODES[code] if quotient > 0
+      end
+      break
+    end
+    result.reverse! if @reverse_commands
+    result.compact
+  end
+end
